@@ -11,6 +11,9 @@
 		F1EAB5EA2AF75BE300E01D5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EAB5E92AF75BE300E01D5F /* ContentView.swift */; };
 		F1EAB5EC2AF75BE400E01D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EAB5EB2AF75BE400E01D5F /* Assets.xcassets */; };
 		F1EAB5EF2AF75BE400E01D5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EAB5EE2AF75BE400E01D5F /* Preview Assets.xcassets */; };
+		F1EAB5F82B00469000E01D5F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EAB5F72B00469000E01D5F /* LocationManager.swift */; };
+		F1EAB5FC2B00487700E01D5F /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EAB5FB2B00487700E01D5F /* CLLocationCoordinate2D+Extensions.swift */; };
+		F1EAB6002B00491F00E01D5F /* MapOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EAB5FF2B00491F00E01D5F /* MapOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		F1EAB5E92AF75BE300E01D5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F1EAB5EB2AF75BE400E01D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1EAB5EE2AF75BE400E01D5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F1EAB5F52AFDEF4400E01D5F /* Mapkit-Udemy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mapkit-Udemy-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F1EAB5F72B00469000E01D5F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F1EAB5FB2B00487700E01D5F /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
+		F1EAB5FF2B00491F00E01D5F /* MapOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,12 @@
 		F1EAB5E62AF75BE300E01D5F /* Mapkit_Udemy */ = {
 			isa = PBXGroup;
 			children = (
+				F1EAB5FD2B00489600E01D5F /* Views */,
+				F1EAB5FE2B0048F300E01D5F /* Models */,
+				F1EAB5F92B00483D00E01D5F /* Extensions */,
+				F1EAB5F62B00466800E01D5F /* Managers */,
+				F1EAB5F52AFDEF4400E01D5F /* Mapkit-Udemy-Info.plist */,
 				F1EAB5E72AF75BE300E01D5F /* Mapkit_UdemyApp.swift */,
-				F1EAB5E92AF75BE300E01D5F /* ContentView.swift */,
 				F1EAB5EB2AF75BE400E01D5F /* Assets.xcassets */,
 				F1EAB5ED2AF75BE400E01D5F /* Preview Content */,
 			);
@@ -65,6 +76,38 @@
 				F1EAB5EE2AF75BE400E01D5F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F1EAB5F62B00466800E01D5F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F1EAB5F72B00469000E01D5F /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F1EAB5F92B00483D00E01D5F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1EAB5FB2B00487700E01D5F /* CLLocationCoordinate2D+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1EAB5FD2B00489600E01D5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1EAB5E92AF75BE300E01D5F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1EAB5FE2B0048F300E01D5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1EAB5FF2B00491F00E01D5F /* MapOptions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +182,9 @@
 			files = (
 				F1EAB5EA2AF75BE300E01D5F /* ContentView.swift in Sources */,
 				F1EAB5E82AF75BE300E01D5F /* Mapkit_UdemyApp.swift in Sources */,
+				F1EAB6002B00491F00E01D5F /* MapOptions.swift in Sources */,
+				F1EAB5F82B00469000E01D5F /* LocationManager.swift in Sources */,
+				F1EAB5FC2B00487700E01D5F /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +321,9 @@
 				DEVELOPMENT_TEAM = 6W96N4J2BC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mapkit-Udemy-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Can we use your location?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need when in use please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +353,9 @@
 				DEVELOPMENT_TEAM = 6W96N4J2BC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mapkit-Udemy-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Can we use your location?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "I need when in use please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
