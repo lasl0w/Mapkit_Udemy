@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1CFEBCC2B0497E9007A70F5 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFEBCB2B0497E9007A70F5 /* MKCoordinateRegion+Extension.swift */; };
 		F1EAB5E82AF75BE300E01D5F /* Mapkit_UdemyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EAB5E72AF75BE300E01D5F /* Mapkit_UdemyApp.swift */; };
 		F1EAB5EA2AF75BE300E01D5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EAB5E92AF75BE300E01D5F /* ContentView.swift */; };
 		F1EAB5EC2AF75BE400E01D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EAB5EB2AF75BE400E01D5F /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1CFEBCB2B0497E9007A70F5 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
 		F1EAB5E42AF75BE300E01D5F /* Mapkit_Udemy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapkit_Udemy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EAB5E72AF75BE300E01D5F /* Mapkit_UdemyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapkit_UdemyApp.swift; sourceTree = "<group>"; };
 		F1EAB5E92AF75BE300E01D5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				F1EAB5FB2B00487700E01D5F /* CLLocationCoordinate2D+Extensions.swift */,
+				F1CFEBCB2B0497E9007A70F5 /* MKCoordinateRegion+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EAB5EA2AF75BE300E01D5F /* ContentView.swift in Sources */,
+				F1CFEBCC2B0497E9007A70F5 /* MKCoordinateRegion+Extension.swift in Sources */,
 				F1EAB5E82AF75BE300E01D5F /* Mapkit_UdemyApp.swift in Sources */,
 				F1EAB6002B00491F00E01D5F /* MapOptions.swift in Sources */,
 				F1EAB5F82B00469000E01D5F /* LocationManager.swift in Sources */,

@@ -15,8 +15,9 @@ import MapKit
 
 struct ContentView: View {
     
-    
-    private var locationManager = LocationManager.shared
+    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
+    // since it's coming from @observable, needs to be @state
+    @State private var locationManager = LocationManager.shared
     // TODO: benefit of private here?
     @State private var selectedStyle: MapOptions = .standard
     
@@ -25,7 +26,7 @@ struct ContentView: View {
         // wrap it in a ZStack so the MapOption picker can be on top
         // align zstack to .top so picker displays at the top
         ZStack(alignment: .top) {
-            Map {
+            Map(position: $position) {
                 // Markers are quick and easy
                 // Annotations allow for more customization
                 Marker("Coffee", coordinate: .coffee)
@@ -52,10 +53,19 @@ struct ContentView: View {
                 UserAnnotation()
             }
             .mapStyle(selectedStyle.mapStyle)
+            // must conform to Equatable to fire onChange
+            .onChange(of: locationManager.region) {
+                withAnimation {
+                    // wrap in withAnimation
+                    // TODO:  doesn't seem to make a diff, map still moves with blue dot either way
+                                    position = .region(locationManager.region)
+                }
+
+            }
             Picker("Map Style", selection: $selectedStyle) {
                 // conforms to caseIterable so it works nicely in a forEach
                 ForEach(MapOptions.allCases) { mapOption in
-                    Text(mapOption.rawValue).tag(mapOption)
+                    Text(mapOption.rawValue.capitalized).tag(mapOption)
                 }
             }
             .pickerStyle(.segmented)
