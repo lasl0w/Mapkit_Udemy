@@ -10,6 +10,8 @@ import Foundation
 import MapKit
 
 extension MKCoordinateRegion: Equatable {
+    // What is a REGION??  It's a center point and a span (which defines the zoom level)
+    
     
     public static func == (lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
         if (lhs.center.latitude == rhs.center.latitude && lhs.span.latitudeDelta == rhs.span.latitudeDelta && lhs.span.longitudeDelta == rhs.span.longitudeDelta) {
@@ -18,5 +20,14 @@ extension MKCoordinateRegion: Equatable {
     } else {
                 return false
         }
+    }
+    
+    // TODO:  Map quick ref - basic distances of lat/long Meters "0.01 is about 1 block"
+    static var coffee : MKCoordinateRegion {
+        MKCoordinateRegion(center: .coffee, latitudinalMeters: 100, longitudinalMeters: 100)
+    }
+    
+    static var restaurant: MKCoordinateRegion {
+        MKCoordinateRegion(center: .restaraunt, latitudinalMeters: 100, longitudinalMeters: 100)
     }
 }

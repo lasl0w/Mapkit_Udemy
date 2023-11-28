@@ -15,6 +15,8 @@ import MapKit
 
 struct ContentView: View {
     
+    // .region is a published property
+    // position is an MKCoordinateRegion
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     // since it's coming from @observable, needs to be @state
     @State private var locationManager = LocationManager.shared
@@ -52,6 +54,15 @@ struct ContentView: View {
                 // run on the simulator, preview doesn't always work
                 UserAnnotation()
             }
+            // iOS 17 baby!  better mapControls... maybe we got em in 16...
+            .mapControls {
+                MapUserLocationButton()
+                MapCompass()
+                // 3D vs 2D - does not fully tilt the pitch
+                MapPitchToggle()
+                // miles per inch
+                MapScaleView()
+            }
             .mapStyle(selectedStyle.mapStyle)
             // must conform to Equatable to fire onChange
             .onChange(of: locationManager.region) {
@@ -72,7 +83,26 @@ struct ContentView: View {
             // set to white so it's not transparent, but it applies above it hiding the map, sooo - add padding to allow it to not block the unsafe area
             .background(.white)
             // sweet hack ^^^
-            .padding()
+            // added padding to the top of the picker to make room for the MapUserLocationbutton
+            .padding([.top], 120)
+            // HStack would be at the top.  VStack with Spacer pushes it down (given the .top alignment on the vstack
+            VStack {
+                Spacer()
+                HStack {
+                    Button("Coffee") {
+                        withAnimation {
+                            position = .region(.coffee)
+                        }
+                    } .buttonStyle(.borderedProminent)
+                        .tint(.brown)
+                    Button("Restaurant") {
+                        withAnimation{
+                            position = .region(.restaurant)
+                        }
+                    }.buttonStyle(.borderedProminent)
+                }
+
+            }
         }
 
     }
